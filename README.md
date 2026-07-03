@@ -1,89 +1,123 @@
 # Housing Price Prediction
 
-This project builds and evaluates regression models to predict residential property prices from structured housing data. The workflow includes exploratory data analysis, feature engineering, target transformation, and model comparison using several regression techniques.
+A machine learning project that predicts residential property prices using structured housing data. The project demonstrates an end-to-end regression workflow, including exploratory data analysis (EDA), feature engineering, target transformation, model training, and performance evaluation.
 
-## Project Objective
 
-The goal is to estimate house sale prices more accurately by combining domain-informed features with machine learning models. This can support use cases such as:
+## Features
 
-- property valuation
-- pricing strategy analysis
-- investment screening
-- real-estate decision support
+- Data cleaning and preprocessing
+- Exploratory Data Analysis (EDA)
+- Feature engineering
+- Target transformation using log scaling
+- Training and comparison of multiple regression models
+- Performance evaluation using standard regression metrics
+
+## Requirements
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Scikit-learn
+- Jupyter Notebook
+
 
 ## Dataset
 
-The notebook expects a CSV file named `housing_price_data.csv` in the project root. A typical dataset includes columns such as:
+The project uses a structured housing dataset (`housing_price_data.csv`) containing property characteristics such as:
 
 - House ID
 - City
-- House Area (sqm)
-- No. of Bedrooms
-- No. of Toilets
-- Stories
+- Floor Area (sqm)
+- Number of Bedrooms
+- Number of Toilets
+- Number of Stories
 - Renovation Status
-- Price ($)
+- Sale Price
+
+The dataset is expected to be placed in the project root directory before running the notebook.
 
 ## Project Structure
 
-- `housing_price_prediction.ipynb` — end-to-end notebook for data loading, EDA, feature engineering, model training, and evaluation.
-- `README.md` — project overview and usage instructions.
-- `requirements.txt` — Python dependencies for running the notebook.
-
-## Setup
-
-1. Create and activate a virtual environment.
-2. Install the dependencies.
-3. Place `housing_price_data.csv` in the repository root.
-4. Open and run the notebook cells in order.
-
-### Environment Setup
-
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
+```
+housing-price-prediction/
+│
+├── housing_price_prediction.ipynb
+├── housing_price_data.csv
+├── requirements.txt
+├── README.md
+└── .gitignore
 ```
 
-## Workflow
+## Machine Learning Workflow
 
 1. Data loading and inspection
-2. Exploratory data analysis
-3. Feature engineering
-4. Target transformation for better regression stability
-5. Training and evaluation of multiple models
-6. Comparison of baseline and improved performance
+2. Data preprocessing
+3. Exploratory Data Analysis
+4. Feature engineering
+5. Log transformation of the target variable
+6. Model training
+7. Model evaluation
+8. Model comparison
 
-## Models Explored
 
-- Dummy Regressor (baseline)
+## Models Evaluated
+
+- Dummy Regressor (Baseline)
 - Linear Regression
 - Lasso Regression
 - Decision Tree Regressor
 - Gradient Boosting Regressor
 
+
 ## Evaluation Metrics
 
-The project evaluates model quality using:
+Model performance is evaluated using:
 
+- Mean Absolute Error (MAE)
 - Mean Squared Error (MSE)
 - Root Mean Squared Error (RMSE)
-- Mean Absolute Error (MAE)
-- R-squared ($R^2$)
+- R² Score
 
-## Notes for Reproducibility
+These metrics provide a balanced comparison between prediction accuracy and model generalization.
 
-- The notebook uses a fixed random seed where appropriate for repeatable results.
-- The target variable is log-transformed to reduce skew and improve model stability.
-- Feature engineering is documented in the notebook to make the reasoning behind each transformation explicit.
 
-## Suggested Next Steps
+## Installation
 
-- Add cross-validation summaries and experiment tracking
-- Compare with Random Forest and XGBoost models
-- Build a simple deployment API or streamlit app
-- Add automated data validation checks
+Clone the repository:
 
-## License
+```bash
+git clone https://github.com/vvivsm/housing-price-prediction.git
+```
 
-This project is intended for educational and demonstration purposes.
+Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Running the Project
+
+Launch Jupyter Notebook and open:
+
+```
+housing_price_prediction.ipynb
+```
+
+Run all notebook cells sequentially.
+
+
+## Future Improvements
+
+Potential extensions include:
+
+- Cross-validation and hyperparameter tuning
+- Random Forest and XGBoost regression models
+- Interactive Streamlit web application
+- Model serialization with Joblib
+- Automated data validation
+- MLflow experiment tracking
+
+## Note
+
+This project was originally completed as part of a machine learning coursework assignment and has since been refined with improved documentation and repository organization for portfolio purposes.
